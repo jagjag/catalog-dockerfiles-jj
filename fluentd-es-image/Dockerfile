@@ -27,6 +27,8 @@ COPY clean-apt /usr/bin
 COPY clean-install /usr/bin
 COPY Gemfile /Gemfile
 
+RUN chomd u+x /usr/bin/clean-install && chmod u+x /usr/bin/clean-apt
+
 # 1. Install & configure dependencies.
 # 2. Install fluentd via ruby.
 # 3. Remove build dependencies.
