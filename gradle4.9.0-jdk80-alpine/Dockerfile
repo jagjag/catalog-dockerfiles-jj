@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM dir.staff.xdf.cn/pub/openjdk:8-jdk-alpine
 
 #CMD ["gradle"]
 
