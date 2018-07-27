@@ -1,6 +1,15 @@
 FROM dir.staff.xdf.cn/pub/openjdk:8-jdk-alpine
 
+RUN  echo 'http://mirrors.ustc.edu.cn/alpine/v3.6/main' > /etc/apk/repositories \
+    && echo 'http://mirrors.ustc.edu.cn/alpine/v3.6/community' >>/etc/apk/repositories \
+&& apk update && apk add tzdata \
+&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
+&& echo "Asia/Shanghai" > /etc/timezone
+
+
 #CMD ["gradle"]
+
+
 
 ENV GRADLE_HOME /opt/gradle
 ENV GRADLE_VERSION 4.9
