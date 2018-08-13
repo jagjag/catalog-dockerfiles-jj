@@ -48,8 +48,8 @@ RUN BUILD_DEPS="make gcc g++ libc6-dev ruby-dev libffi-dev" \
     && ulimit -n 65536
 
 ## change to China local timezone
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
-    && echo "Asia/Shanghai" > /etc/timezone
+#RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
+#    && echo "Asia/Shanghai" > /etc/timezone
 
 # Copy the Fluentd configuration file for logging Docker container logs.
 COPY fluent.conf /etc/fluent/fluent.conf
